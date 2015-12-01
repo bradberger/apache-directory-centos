@@ -116,3 +116,8 @@ under the specified DN:
 ```bash
 ldapsearch -D "uid=admin,ou=system" -w secret -p 10389 -h localhost -b "ou=system"
 ```
+
+## Firewall Rules
+
+To access the server from outside, you'll need to set up [firewall rules](iptables-setup.md).
+There's an overview of the firewall configuration process [here](iptables-setup.md).
