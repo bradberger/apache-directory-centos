@@ -38,7 +38,7 @@ Verify it's install with:
 java -version
 ```
 
-If you've installed a different version of Java previously, and want to update the 
+If you've installed a different version of Java previously, and want to update the
 default version, use the command:
 
 ```bash
@@ -63,7 +63,7 @@ easier to rememeber the location, you can set up a symlink:
 ln -s /opt/apacheds-2.0.0_M20 /opt/apacheds
 ```
 
-That creates a service called `apacheds-2.0.0_M20-default` so you can 
+That creates a service called `apacheds-2.0.0_M20-default` so you can
 interact with it using the regular Linux `service` commands:
 
 ```bash
@@ -71,7 +71,7 @@ service apacheds-2.0.0_M20-default <command>
 ```
 
 You'll probably want the `apacheds` binary on the regular system path,
-as well as the Java paths, so you can do that by adding an `/etc/profile.d` 
+as well as the Java paths, so you can do that by adding an `/etc/profile.d`
 file to add it to the `PATH`. The example below is the path for the Oracle
 Java installtion, so if you're using OpenJDK it will vary.
 
@@ -87,7 +87,7 @@ Make sure the new file is executable with:
 sudo chmod +x /etc/profile.d/apacheds.sh
 ```
 
-Since the service name is a bit long, you can just 
+Since the service name is a bit long, you can just
 rename it to make it easier to interact with:
 
 ```bash
@@ -110,7 +110,7 @@ SSH terminal, you'll need the `ldap-clients` package:
 ```
 
 After installing that, you can see test access with the following
-command. This will give you a verbose dump of the LDAP data for everything 
+command. This will give you a verbose dump of the LDAP data for everything
 under the specified DN:
 
 ```bash
@@ -121,3 +121,8 @@ ldapsearch -D "uid=admin,ou=system" -w secret -p 10389 -h localhost -b "ou=syste
 
 To access the server from outside, you'll need to set up [firewall rules](iptables-setup.md).
 There's an overview of the firewall configuration process [here](iptables-setup.md).
+
+## Setting up LDAP Authentication with ActiveMQ
+
+To set up ActiveMQ to use the Apache Directory server for authentication,
+[see this page](apacheds-activemq-integration.md)
